@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Routing and Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+excerpt: "The @tailwindcss/typography plugin simplifies styling articles and blog posts with Tailwind CSS. By introducing the prose class, it streamlines the process of formatting HTML content, making it visually appealing without the need for extensive CSS customization. With support for GitHub Flavored Markdown, creating polished content is effortless."
 coverImage: "https://next-blog-starter.vercel.app/_next/image?url=%2Fassets%2Fblog%2Fdynamic-routing%2Fcover.jpg&w=3840&q=75"
 date: "March 16, 2024"
 author:
@@ -69,7 +69,7 @@ Something a wise person once told me about typography is:
 
 It's probably important that images look okay here by default as well:
 
-![image](http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fslide2.ef56bad5.jpg&w=3840&q=75)
+![image](https://www.aiaautd.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fslide2.ef56bad5.jpg&w=3840&q=75)
 
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
 
