@@ -4,8 +4,8 @@ excerpt: "The @tailwindcss/typography plugin simplifies styling articles and blo
 coverImage: "https://next-blog-starter.vercel.app/_next/image?url=%2Fassets%2Fblog%2Fdynamic-routing%2Fcover.jpg&w=3840&q=75"
 date: "March 16, 2024"
 author:
-  name: JJ Kasper
-  picture: "https://next-blog-starter.vercel.app/_next/image?url=%2Fassets%2Fblog%2Fdynamic-routing%2Fcover.jpg&w=3840&q=75"
+  name: AIAA UTD
+  picture: "https://www.aiaautd.org/_next/image?url=%2Fofficers%2Fkevin.jpg&w=1080&q=75"
 ogImage:
   url: "https://next-blog-starter.vercel.app/_next/image?url=%2Fassets%2Fblog%2Fdynamic-routing%2Fcover.jpg&w=3840&q=75"
 ---
