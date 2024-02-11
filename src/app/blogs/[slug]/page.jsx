@@ -18,7 +18,7 @@ export default async function Page({ params }) {
                 </h1>
                 {/* cover image */}
                 <Image
-                    className="mb-5 rounded-lg"
+                    className="mb-5 rounded-lg object-cover"
                     src={blog.metadata.coverImage}
                     alt={blog.metadata.title}
                     width={1300}
@@ -30,7 +30,7 @@ export default async function Page({ params }) {
                     <div className='flex items-center'>
                         <div className='relative w-14 h-14'>
                             <Image
-                                className="rounded-full w-full"
+                                className="rounded-full w-full object-cover"
                                 src={blog.metadata.author.picture}
                                 alt={blog.metadata.author.name}
                                 fill
