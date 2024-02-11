@@ -1,7 +1,7 @@
 import { getBlogBySlug, getAllBlogSlugs } from '@/lib/blogFetchers';
 import Image from 'next/image';
 import markdownToHtml from '@/lib/markdownToHtml';
-import '@/styles/markdown.css';
+import '@/styles/Markdown.css';
 
 export async function generateStaticParams() {
     return getAllBlogSlugs();
