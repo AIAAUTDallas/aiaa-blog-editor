@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-canvas-default: #0d1117;
+    --color-canvas-subtle: #161b22;
+    --color-border-default: #30363d;
+    --color-border-muted: #21262d;
+  }
+}
+
 h1 {
   color: whitesmoke;
   font-family: 'Chivo', sans-serif;
@@ -12,6 +21,129 @@ h1 {
 
 p {
   color: whitesmoke;
+}
+
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+
+li {
+  @apply my-2;
+}
+
+ul ul,
+ol ul {
+  list-style: circle;
+  margin-left: 15px;
+}
+ol ol,
+ul ol {
+  list-style: lower-latin;
+  margin-left: 15px;
+}
+ul ol ul,
+ul ul ol,
+ol ul ul,
+ol ol ul {
+  list-style: square;
+  margin-left: 15px;
+}
+
+ol ol ol,
+ol ol ul,
+ol ul ol,
+ol ul ul,
+ul ol ol,
+ul ol ul,
+ul ul ol,
+ul ul ul {
+  list-style: none;
+  margin-left: 15px;
+}
+
+pre {
+  background-color: #0d1117;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.markdown {
+  text-align: center;
+  background-color: #0f172a;
+}
+
+.markdown p,
+.markdown li,
+.markdown blockquote,
+.markdown table,
+.markdown pre,
+.markdown img,
+.markdown iframe,
+.markdown hr {
+  @apply text-[#c9d1d9] mb-[1rem] leading-relaxed;
+}
+
+.markdown iframe {
+  @apply w-full h-64 md:h-96 my-8 rounded-lg;
+}
+
+.markdown .content img {
+  @apply w-full h-64 md:h-96 my-8 rounded-lg object-cover;
+}
+
+.markdown blockquote {
+  @apply border-l-4 border-gray-400 pl-4 my-4 italic;
+}
+
+.markdown h2 {
+  @apply text-2xl font-bold md:text-4xl mb-4;
+}
+
+.markdown h3 {
+  @apply text-xl font-bold md:text-2xl mb-2;
+}
+
+.markdown h4 {
+  @apply text-lg font-bold md:text-xl mb-1;
+}
+
+.markdown table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.markdown tr {
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.markdown th {
+  font-weight: 600;
+  background-color: var(--color-canvas-subtle);
+}
+
+.markdown td,
+.markdown th {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-default);
+}
+
+.markdown th {
+  font-weight: 600;
+}
+
+.markdown table img {
+  background-color: transparent;
 }
 
 @media (max-width: 767px) {

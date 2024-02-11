@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../styles/Nav.module.css';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
+import Image from 'next/image';
+import AIAA_logo from "../../public/AIAA_Logo.png";
 
 const Footer = () => {
   return (
@@ -13,11 +15,8 @@ const Footer = () => {
         <div className="container mx-auto flex flex-wrap justify-center md:justify-between text-gray-400">
           <div className="flex flex-col w-full py-2 md:py-4 md:w-1/3">
             <div className="flex m-auto">
-              <img src="./AIAA_Logo.png" alt="logo" className="h-5 w-5" />
-              <h2
-                className="text-sm text-white text-lg font-serif, font-family: Chivo,
-  font-extrabold "
-              >
+              <Image src={AIAA_logo} alt="AIAA UTD" width={28} height={28} className='mr-2' />
+              <h2 className="text-sm text-whitefont-serif, font-family: Chivo, font-extrabold ">
                 AIAA UTD
               </h2>
             </div>
