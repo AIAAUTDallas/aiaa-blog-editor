@@ -1,16 +1,13 @@
 'use client';
-
-import React, { use, useEffect } from 'react';
-import styles from '../styles/App.module.css';
+import React, {useState, useEffect} from 'react';
 import Head from 'next/head';
-import { useState } from 'react';
 import Image from 'next/image';
-import markdownToHtml from '../lib/markdownToHtml';
-import { usePreview } from '../app/context';
-import { getBlogMetadata } from '../lib/blogFetchers';
-import MDEditor, { commands } from '@uiw/react-md-editor/nohighlight';
+import MDEditor, {commands} from '@uiw/react-md-editor/nohighlight';
+import styles from '../styles/App.module.css';
 import '../styles/Markdown.css';
-
+import {usePreview} from '../app/context';
+import {getBlogMetadata} from '../lib/blogFetchers';
+import markdownToHtml from '../lib/markdownToHtml';
 
 const metadata = {
   title: 'Dynamic Routing and Static Generation',
@@ -25,10 +22,10 @@ const metadata = {
   },
   date: 'March 16, 2024',
   readTime: '',
-}
+};
 
 export default function Home() {
-  const [blogMetadata, setBlogMetadata] = useState();
+  const [blogMetadata, setBlogMetadata] = useState({});
   const [markdown, setMarkdown] = useState(`---
   title: "${metadata.title}"
   excerpt: "${metadata.excerpt}"
@@ -40,7 +37,7 @@ export default function Home() {
 ---`);
   const [html, setHTML] = useState('');
   const [done, setDone] = useState(false);
-  const { state } = usePreview();
+  const {state} = usePreview();
 
   async function convertMarkdownToHTML() {
     const md = await getBlogMetadata(markdown);
@@ -51,25 +48,25 @@ export default function Home() {
     setDone(true);
   }
 
-  async function saveToLocalStorage(value) {
-    localStorage.setItem("aiaa-curr-blog", value);
+  function saveToLocalStorage(value) {
+    localStorage.setItem('aiaa-curr-blog', value);
   }
 
   useEffect(() => {
-    const savedFromStorage = localStorage.getItem("aiaa-curr-blog");
+    const savedFromStorage = localStorage.getItem('aiaa-curr-blog');
 
     if (savedFromStorage) {
       setMarkdown(savedFromStorage);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (state.isPreviewVisible) {
       convertMarkdownToHTML();
     } else {
-      setDone(false)
+      setDone(false);
     }
-  }, [state.isPreviewVisible]); // Dependency array ensures this effect runs only when state.isPreviewVisible changes
+  }, [state.isPreviewVisible]);
 
   return (
     <div className={styles.App}>
@@ -83,11 +80,11 @@ export default function Home() {
               data-color-mode="light"
               value={markdown}
               preview="edit"
-              height={"72svh"}
+              height="72svh"
               enablePreview={false}
               onChange={(value) => {
                 setMarkdown(value);
-                saveToLocalStorage(value)
+                saveToLocalStorage(value);
               }}
               extraCommands={[commands.fullscreen]}
             />
@@ -97,48 +94,41 @@ export default function Home() {
         {state.isPreviewVisible && done && (
           <div className="min-h-screen max-w-3xl mx-auto text-left py-14 px-4">
             <h1 className="text-3xl md:text-6xl font-bold tracking-tighter leading-tight md:leading-none mb-12 text-center md:text-left">
-              {blogMetadata.title ?? ""}
+              {blogMetadata.title ?? ''}
             </h1>
-            {/* cover image */}
             <Image
               className="mb-5 rounded-lg object-cover"
-              src={blogMetadata.coverImage ?? ""}
-              alt={blogMetadata.title ?? ""}
+              src={blogMetadata.coverImage ?? ''}
+              alt={blogMetadata.title ?? ''}
               width={1300}
               height={630}
             />
-
-            {/* author */}
             <div className="flex flex-col mb-4 md:flex-row md:items-center">
               <div className="flex items-center">
                 <div className="relative w-14 h-14">
                   <Image
                     className="rounded-full w-full object-cover m-0"
-                    src={blogMetadata.author.picture ?? ""}
-                    alt={blogMetadata.author.name ?? ""}
+                    src={blogMetadata.author.picture ?? ''}
+                    alt={blogMetadata.author.name ?? ''}
                     fill
                   />
                 </div>
                 <div className="ml-3">
                   <p className="text-sm my-0">Written by</p>
                   <p className="text-lg font-bold my-0">
-                    {blogMetadata.author.name ?? ""}
+                    {blogMetadata.author.name ?? ''}
                   </p>
                 </div>
               </div>
-
-              {/* date and read time */}
               <div className="mt-3 md:ml-auto">
                 <p className="text-sm my-0">
-                  {blogMetadata.date ?? ""} • {blogMetadata.readTime ?? ""} min read
+                  {blogMetadata.date ?? ''} • {blogMetadata.readTime ?? ''} min
+                  read
                 </p>
               </div>
             </div>
-
-            {/* line */}
             <div className="w-full mb-4 border-b-2 border-gray-500" />
-
-            <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
+            <div className="content" dangerouslySetInnerHTML={{__html: html}} />
           </div>
         )}
       </main>
