@@ -30,21 +30,21 @@ export default async function Page({ params }) {
                     <div className='flex items-center'>
                         <div className='relative w-14 h-14'>
                             <Image
-                                className="rounded-full w-full object-cover"
+                                className="rounded-full w-full object-cover m-0"
                                 src={blog.metadata.author.picture}
                                 alt={blog.metadata.author.name}
                                 fill
                             />
                         </div>
                         <div className="ml-3">
-                            <p className="text-sm mb-0">Written by</p>
-                            <p className="text-lg font-bold mb-0">{blog.metadata.author.name}</p>
+                            <p className="text-sm my-0">Written by</p>
+                            <p className="text-lg font-bold my-0">{blog.metadata.author.name}</p>
                         </div>
                     </div>
 
                     {/* date and read time */}
                     <div className="mt-3 md:ml-auto">
-                        <p className="text-sm mb-0">
+                        <p className="text-sm my-0">
                             {blog.metadata.date} • {blog.metadata.readTime} min read
                         </p>
                     </div>
