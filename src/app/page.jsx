@@ -8,7 +8,6 @@ import '../styles/Markdown.css';
 import {usePreview} from '../app/context';
 import {getBlogMetadata} from '../lib/blogFetchers';
 import markdownToHtml from '../lib/markdownToHtml';
-import {Dropdown, Card} from 'react-daisyui';
 
 const metadata = {
   title: 'Dynamic Routing and Static Generation',
