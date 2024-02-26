@@ -15,7 +15,7 @@ import {fromHtmlIsomorphic} from 'hast-util-from-html-isomorphic';
 import {unified} from 'unified';
 import {ElementContent} from 'rehype-highlight/lib';
 
-export default async function markdownToHtml(markdown: string) {
+export default async function markdownToHtml(markdown) {
   const result = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -32,7 +32,7 @@ export default async function markdownToHtml(markdown: string) {
         {
           fragment: true,
         },
-      ).children as Array<ElementContent>,
+      ).children,
     })
     .use(rehypeVideo)
     .use(rehypeHighlight)

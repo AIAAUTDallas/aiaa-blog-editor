@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 
 const contentDir = path.join(process.cwd(), 'src/data/blogs');
 
-export async function getBlogBySlug(slug: string) {
+export async function getBlogBySlug(slug) {
   const fileName = slug + '.md';
   const filePath = path.join(contentDir, fileName);
   const fileContent = fs.readFileSync(filePath, 'utf8');
