@@ -27,9 +27,14 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <button className='p-2 bg-blue-700 rounded-lg ml-auto mr-3 hover:cursor-pointer hover:bg-blue-800' onClick={togglePreview}>
-        {state.isPreviewVisible ? 'Hide Preview' : 'Show Preview'}
-      </button>
+      <div>
+        <a href='https://www.markdownguide.org/cheat-sheet/' target='_blank' className='p-2 bg-blue-700 rounded-lg mr-3 hover:cursor-pointer hover:bg-blue-800 text-white'>
+          Markdown Cheat Sheet
+        </a>
+        <button className='p-2 bg-blue-700 rounded-lg mr-3 hover:cursor-pointer hover:bg-blue-800' onClick={togglePreview}>
+          {state.isPreviewVisible ? 'Hide Preview' : 'Show Preview'}
+        </button>
+      </div>
     </nav>
   );
 }
