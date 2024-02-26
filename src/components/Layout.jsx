@@ -3,13 +3,16 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { PreviewProvider } from "../app/context";
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <>
-      <Navbar />
-      {children}
-      <Footer />
+      <PreviewProvider>
+        <Navbar />
+        {children}
+        <Footer />
+      </PreviewProvider>
     </>
   );
 }

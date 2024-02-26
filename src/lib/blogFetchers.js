@@ -1,24 +1,19 @@
-import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
 const contentDir = path.join(process.cwd(), 'src/data/blogs');
 
-export async function getBlogBySlug(slug) {
-  const fileName = slug + '.md';
-  const filePath = path.join(contentDir, fileName);
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContent);
+export async function getBlogMetadata(markdown) {
+  const { data, content } = matter(markdown);
 
   // Calculate reading time based on the length of the content
   const averageWordsPerMinute = 238; // Adjust as needed
-  const words = fileContent.split(/\s+/).length;
+  const words = markdown.split(/\s+/).length;
   const readingTime = Math.ceil(words / averageWordsPerMinute);
 
   return {
     metadata: {...data, readTime: readingTime},
     content,
-    slug: path.parse(fileName).name,
   };
 }
 

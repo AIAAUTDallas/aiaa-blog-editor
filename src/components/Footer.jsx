@@ -81,26 +81,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          <div className="flex flex-col w-full py-2 md:py-4 md:w-1/3">
-            <Nav className="flex justify-center">
-              <Link className={styles.link} href="/">
-                Home
-              </Link>
-              <Link className={styles.link} href="/newsletters">
-                Newsletter
-              </Link>
-              <Link className={styles.link} href="/events">
-                Events
-              </Link>
-              <Link className={styles.link} href="/team">
-                Team
-              </Link>
-              <Link className={styles.link} href="/contact-us">
-                Contact Us
-              </Link>
-            </Nav>
-          </div>
         </div>
       </div>
       <div className="bg-[#0a2647] flex flex-row p-3 text-center ">
