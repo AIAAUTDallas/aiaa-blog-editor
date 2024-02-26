@@ -123,4 +123,154 @@
   /* purposely ignored */
 }
 
+ul {
+  list-style: disc !important;
+}
+ol {
+  list-style: decimal !important;
+}
+
+li {
+  @apply my-2;
+}
+
+menu, ol, ul {
+  margin-left: 15px !important;
+  padding-left: 15px !important;
+}
+
+ul ul,
+ol ul {
+  list-style: circle !important;
+  margin-left: 15px !important;
+}
+ol ol,
+ul ol {
+  list-style: lower-latin !important;
+  margin-left: 15px !important;
+}
+ul ol ul,
+ul ul ol,
+ol ul ul,
+ol ol ul {
+  list-style: square !important;
+  margin-left: 15px !important;
+}
+
+ol ol ol,
+ol ol ul,
+ol ul ol,
+ol ul ul,
+ul ol ol,
+ul ol ul,
+ul ul ol,
+ul ul ul {
+  list-style: none !important;
+  margin-left: 15px !important;
+}
+
+pre {
+  background-color: #0d1117;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.markdown {
+  text-align: center;
+  background-color: #0f172a;
+}
+
+.markdown p,
+.markdown li,
+.markdown blockquote,
+.markdown table,
+.markdown pre,
+.markdown img,
+.markdown iframe,
+.markdown hr {
+  @apply text-[#c9d1d9] my-[1rem] leading-8 text-lg;
+}
+
+.markdown p {
+  @apply text-lg text-[#c9d1d9] my-[1rem] leading-8;
+}
+
+.markdown iframe {
+  @apply w-full h-64 md:h-96 my-8 rounded-lg;
+}
+
+.markdown .content img {
+  @apply w-full h-auto my-8 rounded-lg object-cover;
+}
+
+.markdown blockquote {
+  @apply border-l-4 border-gray-400 pl-4 my-4 italic;
+}
+
+.markdown h2 {
+  @apply text-2xl font-bold md:text-4xl my-6;
+}
+
+.markdown h3 {
+  @apply text-xl font-bold md:text-2xl my-4;
+}
+
+.markdown h4 {
+  @apply text-lg font-bold md:text-xl my-2;
+}
+
+.markdown table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+.markdown tr {
+  border-top: 1px solid var(--color-border-muted);
+}
+
+.markdown th {
+  font-weight: 600;
+  background-color: var(--color-canvas-subtle);
+}
+
+.markdown td,
+.markdown th {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border-default);
+}
+
+.markdown th {
+  font-weight: 600;
+}
+
+.markdown table img {
+  background-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .fc-toolbar.fc-header-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .fc-toolbar.fc-header-toolbar .fc-toolbar-chunk:nth-child(1) {
+    order: 3;
+  }
+  .fc-toolbar.fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+    order: 1;
+  }
+  .fc-toolbar.fc-header-toolbar .fc-toolbar-chunk:nth-child(3) {
+    order: 2;
+  }
+}
+
+
 

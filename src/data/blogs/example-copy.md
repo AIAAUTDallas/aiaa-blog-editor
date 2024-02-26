@@ -1,6 +1,6 @@
 ---
 title: "Dynamic Routing and Static Generation"
-excerpt: "The @tailwindcss/typography plugin simplifies styling articles and blog posts with Tailwind CSS. By introducing the prose class, it streamlines the process of formatting HTML content, making it visually appealing without the need for extensive CSS customization. With support for GitHub Flavored Markdown, creating polished content is effortless."
+excerpt: "The @tailwindcss/typography plugin simplifies styling articles and blog posts with Tailwind CSS."
 coverImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1213&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 date: "March 16, 2024"
 author:
@@ -10,11 +10,9 @@ ogImage:
   url: "https://next-blog-starter.vercel.app/_next/image?url=%2Fassets%2Fblog%2Fdynamic-routing%2Fcover.jpg&w=3840&q=75"
 ---
 
-Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.
+Asynchronous background jobs can often dramatically improve the scalability of web applications by moving time-consuming, resource-intensive tasks to the background. These tasks are often prone to failures, and retrying mechanisms often make it even more expensive to operate applications with such jobs. Having a background queue helps the web servers handle incoming web requests promptly, and reduces the likelihood of performance issues that occur when requests become backlogged.
 
-By default, Tailwind removes all of the default browser styling from paragraphs, headings, lists and more. This ends up being really useful for building application UIs because you spend less time undoing user-agent styles, but when you _really are_ just trying to style some content that came from a rich-text editor in a CMS or a markdown file, it can be surprising and unintuitive.
-
-We get lots of complaints about it actually, with people regularly asking us things like:
+Asynchronous background jobs can often dramatically improve the scalability of web applications by moving time-consuming, resource-intensive tasks to the background. These tasks are often prone to failures, and retrying mechanisms often make it even more expensive to operate applications with such jobs. Having a background queue helps the web servers handle incoming web requests promptly, and reduces the likelihood of performance issues that occur when requests become backlogged.
 
 > Why is Tailwind removing the default styles on my `h1` elements? How do I disable this? What do you mean I lose all the other base styles too?
 > We hear you, but we're not convinced that simply disabling our base styles is what you really want. You don't want to have to remove annoying margins every time you use a `p` element in a piece of your dashboard UI. And I doubt you really want your blog posts to use the user-agent styles either — you want them to look _awesome_, not awful.
@@ -75,11 +73,15 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 Now I'm going to show you an example of an unordered list to make sure that looks good, too:
 
+![image](https://images.unsplash.com/photo-1511903979581-3f1d3afb4372?q=80&w=3776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+
 - So here is the first item in this list.
 - In this example we're keeping the items short.
 - Later, we'll use longer, more complex list items.
 
 And that's the end of this section.
+
+![image](https://images.unsplash.com/photo-1523132797263-747d5d0dbbb3?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 ## What if we stack headings?
 
