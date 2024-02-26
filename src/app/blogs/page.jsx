@@ -41,7 +41,7 @@ export default async function Page() {
   return (
     <main className={styles.App}>
       <PageHeader title="Blogs" subtitle={`A list of all blogs`} />
-      <div className="container min-h-[100svh] max-w-4xl mx-auto py-16 grid md:grid-cols-2">
+      <div className="min-h-[100svh] w-full mx-auto md:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {blogs.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
