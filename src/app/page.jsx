@@ -8,6 +8,7 @@ import '../styles/Markdown.css';
 import {usePreview} from '../app/context';
 import {getBlogMetadata} from '../lib/blogFetchers';
 import markdownToHtml from '../lib/markdownToHtml';
+import {Dropdown, Card} from 'react-daisyui';
 
 const metadata = {
   title: 'Dynamic Routing and Static Generation',
@@ -73,9 +74,43 @@ export default function Home() {
       <Head>
         <title>American Institute of Aeronautics and Astronautics at UTD</title>
       </Head>
-      <main className="markdown text-white">
+      <main className="markdown text-white relative">
         {!state.isPreviewVisible && (
           <div className="min-h-[80svh] container py-8">
+            <Dropdown
+              dataTheme="light"
+              className="z-[999] hover:text-gray rounded-md mb-4 items-start mr-auto"
+            >
+              <Dropdown.Toggle>How does it work?</Dropdown.Toggle>
+              <Dropdown.Menu className="card card-compact w-auto p-2 shadow bg-primary text-primary-content m-1">
+                <Card.Body className="text-left bg-[#0a2647]">
+                  <Card.Title tag={'h3'} className="text-white"></Card.Title>
+                  <p className="text-white">
+                    1. Should always be set at the top.
+                  </p>
+                  <div className="bg-black p-2">
+                    <code className="whitespace-pre-wrap text-xs text-white">
+                      {`---
+title: "Dynamic Routing and Static Generation"
+excerpt: "The @tailwindcss/typography plugin simplifies styling articles and blog posts with Tailwind CSS."
+coverImage: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1213&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+date: "March 16, 2024"
+author:
+  name: AIAA UTD
+  picture: "https://www.aiaautd.org/_next/image?url=%2Fofficers%2Fkevin.jpg&w=1080&q=75"
+---`}
+                    </code>
+                  </div>
+                  <p className="text-white text-sm">
+                    2. Edit under like any other editor.
+                  </p>
+                  <p className="text-white text-sm">
+                    3. More information on <a href='https://www.markdownguide.org/cheat-sheet/'>Markdown</a>.
+                  </p>
+                </Card.Body>
+              </Dropdown.Menu>
+            </Dropdown>
+
             <MDEditor
               data-color-mode="light"
               value={markdown}
